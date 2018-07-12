@@ -11,7 +11,8 @@ source:
 
 build:
   noarch: python
-  number: 1
+  noarch: python
+  number: 2
   entry_points:
     - conf_page_dumper = conf_publisher.page_dumper:main
     - conf_page_maker = conf_publisher.page_maker:main
