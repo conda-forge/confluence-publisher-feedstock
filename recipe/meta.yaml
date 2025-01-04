@@ -11,8 +11,7 @@ source:
 
 build:
   noarch: python
-  noarch: python
-  number: 0
+  number: 1
   entry_points:
     - conf_page_dumper = conf_publisher.page_dumper:main
     - conf_page_maker = conf_publisher.page_maker:main
@@ -21,14 +20,16 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - pyyaml >=3.11
     - requests >=2.4.3
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - conf_publisher
     - conf_publisher.page_dumper
